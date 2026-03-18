@@ -23,10 +23,13 @@ export default function Window({
   height: number
 }) {
 
-  const TOP_OFFSET = 60
+  const DESKTOP_TOP_OFFSET = 60
+  const MOBILE_TOP_OFFSET = 50
   const MARGIN = 0
   const STACK_OFFSET = 20
   const MOBILE_BREAKPOINT = 640
+  const getTopOffset = (viewportWidth: number) =>
+    viewportWidth <= MOBILE_BREAKPOINT ? MOBILE_TOP_OFFSET : DESKTOP_TOP_OFFSET
 
   const [isMobile, setIsMobile] = useState(
     typeof window !== "undefined" ? window.innerWidth <= MOBILE_BREAKPOINT : false
@@ -40,9 +43,12 @@ export default function Window({
 
   const DEFAULT_HEIGHT =
     typeof window !== "undefined"
-      ? (window.innerWidth <= MOBILE_BREAKPOINT
-        ? window.innerHeight - TOP_OFFSET
-        : Math.min(height, window.innerHeight - TOP_OFFSET - MARGIN))
+      ? (() => {
+        const topOffset = getTopOffset(window.innerWidth)
+        return window.innerWidth <= MOBILE_BREAKPOINT
+          ? window.innerHeight - topOffset
+          : Math.min(height, window.innerHeight - topOffset - MARGIN)
+      })()
       : height
 
   const getCenteredPosition = (
@@ -50,15 +56,16 @@ export default function Window({
     windowHeight: number,
     width: number,
     height: number,
-    offset: number
+    offset: number,
+    topOffset: number
   ) => ({
     x: Math.min(
       Math.max(MARGIN, windowWidth - width - MARGIN),
       Math.max(MARGIN, (windowWidth - width) / 2 + offset)
     ),
     y: Math.min(
-      Math.max(TOP_OFFSET, windowHeight - height - MARGIN),
-      Math.max(TOP_OFFSET, (windowHeight - height) / 2 + offset)
+      Math.max(topOffset, windowHeight - height - MARGIN),
+      Math.max(topOffset, (windowHeight - height) / 2 + offset)
     ),
   })
 
@@ -72,12 +79,13 @@ export default function Window({
   })
 
   const [position, setPosition] = useState(() => {
-    if (typeof window === "undefined") return { x: 0, y: TOP_OFFSET }
+    if (typeof window === "undefined") return { x: 0, y: DESKTOP_TOP_OFFSET }
     const offset = child * STACK_OFFSET
     const mobileViewport = window.innerWidth <= MOBILE_BREAKPOINT
+    const topOffset = getTopOffset(window.innerWidth)
 
     if (mobileViewport) {
-      return { x: 0, y: TOP_OFFSET }
+      return { x: 0, y: topOffset }
     }
 
     return getCenteredPosition(
@@ -85,7 +93,8 @@ export default function Window({
       window.innerHeight,
       DEFAULT_WIDTH,
       DEFAULT_HEIGHT,
-      offset
+      offset,
+      topOffset
     )
   })
 
@@ -108,12 +117,13 @@ export default function Window({
 
     const handleResize = () => {
       const mobileViewport = window.innerWidth <= MOBILE_BREAKPOINT
+      const topOffset = getTopOffset(window.innerWidth)
       const nextWidth = mobileViewport
         ? window.innerWidth
         : Math.min(size.width, window.innerWidth - MARGIN * 2)
       const nextHeight = mobileViewport
-        ? window.innerHeight - TOP_OFFSET
-        : Math.min(size.height, window.innerHeight - TOP_OFFSET - MARGIN)
+        ? window.innerHeight - topOffset
+        : Math.min(size.height, window.innerHeight - topOffset - MARGIN)
 
       setIsMobile(mobileViewport)
       setSize((prev) => (
@@ -124,7 +134,7 @@ export default function Window({
 
       setPosition((prev) => ({
         x: mobileViewport ? 0 : Math.max(MARGIN, Math.min(prev.x, window.innerWidth - nextWidth - MARGIN)),
-        y: mobileViewport ? TOP_OFFSET : Math.max(TOP_OFFSET, Math.min(prev.y, window.innerHeight - nextHeight - MARGIN)),
+        y: mobileViewport ? topOffset : Math.max(topOffset, Math.min(prev.y, window.innerHeight - nextHeight - MARGIN)),
       }))
 
       if (mobileViewport && isMaximized) {
@@ -146,10 +156,11 @@ export default function Window({
     if (!isMaximized) return
 
     const syncToViewport = () => {
-      setPosition({ x: 0, y: TOP_OFFSET })
+      const topOffset = getTopOffset(window.innerWidth)
+      setPosition({ x: 0, y: topOffset })
       setSize({
         width: window.innerWidth,
-        height: window.innerHeight - TOP_OFFSET,
+        height: window.innerHeight - topOffset,
       })
     }
 
@@ -181,10 +192,11 @@ export default function Window({
       position,
     })
 
-    setPosition({ x: 0, y: TOP_OFFSET })
+    const topOffset = getTopOffset(window.innerWidth)
+    setPosition({ x: 0, y: topOffset })
     setSize({
       width: window.innerWidth,
-      height: window.innerHeight - TOP_OFFSET,
+      height: window.innerHeight - topOffset,
     })
 
     setIsMaximized(true)
@@ -197,7 +209,7 @@ export default function Window({
       minWidth={300}
       minHeight={200}
       maxWidth={isMaximized ? undefined : (typeof window !== "undefined" ? window.innerWidth - MARGIN * 2 : undefined)}
-      maxHeight={isMaximized ? undefined : (typeof window !== "undefined" ? window.innerHeight - TOP_OFFSET : undefined)}
+      maxHeight={isMaximized ? undefined : (typeof window !== "undefined" ? window.innerHeight - getTopOffset(window.innerWidth) : undefined)}
       bounds={isMaximized ? undefined : "window"}
       dragHandleClassName="window-header"
       cancel=".window-action-btn, .window-action-btn *"
@@ -230,7 +242,7 @@ export default function Window({
 
         {/* header */}
         <div
-          className={`window-header text-white flex justify-between items-center bg-window-header px-5 py-3 rounded-t-[11px] border-b-2 border-window-border`}
+          className={`window-header text-white flex justify-between items-center bg-window-header px-6 py-2 rounded-t-[11px] border-b-2 border-window-border`}
         >
           <span className="text-lg">{title}</span>
           <div className="flex items-center justify-center gap-2">

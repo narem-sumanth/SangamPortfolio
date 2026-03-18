@@ -8,18 +8,31 @@ type Props = {
   children: React.ReactNode
   vol?: number
   playType?: "click" | "hover"
+  pitch?: number
+  onPlay?: () => void
 }
 
-export default function SoundHover({ src, children, vol = 1, playType }: Props) {
+export default function SoundHover({ src, children, vol = 1, playType, pitch = 1, onPlay }: Props) {
   const audioRef = useRef<HTMLAudioElement | null>(null)
   const { volume } = themeControls();
 
   const playSound = () => {
     if (!audioRef.current || !volume) return
 
+    // Disable pitch correction so playbackRate changes alter the actual pitch.
+    ;(audioRef.current as HTMLAudioElement & {
+      preservesPitch?: boolean
+      mozPreservesPitch?: boolean
+      webkitPreservesPitch?: boolean
+    }).preservesPitch = false
+    ;(audioRef.current as HTMLAudioElement & { mozPreservesPitch?: boolean }).mozPreservesPitch = false
+    ;(audioRef.current as HTMLAudioElement & { webkitPreservesPitch?: boolean }).webkitPreservesPitch = false
+
     audioRef.current.volume = vol
+    audioRef.current.playbackRate = pitch
     audioRef.current.currentTime = 0
     audioRef.current.play().catch(() => { })
+    onPlay?.()
   }
 
   return (

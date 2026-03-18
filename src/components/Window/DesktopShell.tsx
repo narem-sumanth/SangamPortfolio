@@ -17,7 +17,7 @@ type WindowSize = { width: number; height: number }
 
 const WINDOW_SIZES: Record<WindowName, WindowSize> = {
   about: { width: 956, height: 400 },
-  work: { width: 956, height: 600 },
+  work: { width: 956, height: 400 },
   faq: { width: 956, height: 400 },
   contact: { width: 956, height: 400 },
 }
@@ -238,7 +238,7 @@ export default function DesktopShell() {
             </div>
           </Draggable>
           <div
-            className="fixed bottom-6 right-6 size-24 group"
+            className="fixed bottom-4 md:bottom-6 right-4 md:right-6 size-18 md:size-24 group"
             onClick={() => handlePlayBgm()}
           >
             {playBgm ?

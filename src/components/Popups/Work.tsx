@@ -1,9 +1,33 @@
+"use client";
 /* eslint-disable @next/next/no-img-element */
+import { useCallback, useState } from "react";
 import { WorkPageData } from "@/constants/WorkPage";
 import Link from "next/link";
+import SoundHover from "@/components/PlaySound/HoverSound";
+
+const BASE_PITCH = 1.0;
+const PITCH_STEP = 0.08;
+const MAX_PITCH = 2.0;
 
 export default function Work() {
   const { tools, dev, behance } = WorkPageData;
+  const [hoverCount, setHoverCount] = useState(0);
+
+  const currentHoverPitch = Math.min(
+    MAX_PITCH,
+    BASE_PITCH + hoverCount * PITCH_STEP
+  );
+
+  const handleHoverSoundPlay = useCallback(() => {
+    setHoverCount((count) => {
+      const pitchAtCurrentStep = Math.min(
+        MAX_PITCH,
+        BASE_PITCH + count * PITCH_STEP
+      );
+
+      return pitchAtCurrentStep >= MAX_PITCH ? 0 : count + 1;
+    });
+  }, []);
 
   return (
     <div className="pb-5 work-popup-content">
@@ -15,57 +39,75 @@ export default function Work() {
       </div> */}
 
       {/* Tools + Dev */}
-      <div className="grid grid-cols-2 gap-4.5">
+      <div className="tools-dev-grid gap-4.5">
         <div>
-          <h2 className="text-3xl font-bold mb-2">TOOLS</h2>
+          <h2 className="text-xl sm:text-2xl md:text-2xl lg:text-3xl font-bold mb-2">
+            TOOLS
+          </h2>
 
           <div className="flex flex-wrap gap-3">
             {tools.map((tool) => (
-              <span
+              <div
                 key={tool}
                 className="
-                px-2.5 py-1
-                border border-gray-200
-                rounded-lg
-                text-[17px]
-                dark:bg-[rgba(17,19,24,0.55)]
-                transition
-                hover:translate-y-0.75
-                hover:shadow-lg
-                darkhover:bg-[rgba(37,48,70,0.85)]
-                shadow-flat cursor-default
-                "
+                  px-2.5 py-1
+                  border border-gray-200
+                  rounded-lg
+                  text-sm sm:text-base
+                  dark:bg-[rgba(17,19,24,0.55)]
+                  transition
+                  hover:translate-y-0.75
+                  hover:shadow-lg
+                  darkhover:bg-[rgba(37,48,70,0.85)]
+                  shadow-flat cursor-default
+                  "
               >
-                {tool}
-              </span>
+                <SoundHover
+                  src="/assets/original/sounds/hover.mp3"
+                  vol={0.3}
+                  playType="hover"
+                  pitch={currentHoverPitch}
+                  onPlay={handleHoverSoundPlay}
+                >
+                  {tool}
+                </SoundHover>
+              </div>
             ))}
           </div>
         </div>
 
         <div>
-          <h2 className="text-3xl font-bold mb-2">
+          <h2 className="text-xl sm:text-2xl md:text-2xl lg:text-3xl font-bold mb-2">
             DEVELOPMENT
           </h2>
 
           <div className="flex flex-wrap gap-3">
             {dev.map((item) => (
-              <span
+              <div
                 key={item}
                 className="
-                px-2.5 py-1
-                border border-gray-200
-                rounded-lg
-                text-[17px]
-                dark:bg-[rgba(17,19,24,0.55)]
-                transition
-                hover:translate-y-0.75
-                hover:shadow-lg
-                dark:hover:bg-[rgba(37,48,70,0.85)]
-                shadow-flat cursor-default
-                "
+                  px-2.5 py-1
+                  border border-gray-200
+                  rounded-lg
+                  text-sm sm:text-base
+                  dark:bg-[rgba(17,19,24,0.55)]
+                  transition
+                  hover:translate-y-0.75
+                  hover:shadow-lg
+                  dark:hover:bg-[rgba(37,48,70,0.85)]
+                  shadow-flat cursor-default
+                  "
               >
-                {item}
-              </span>
+                <SoundHover
+                  src="/assets/original/sounds/hover.mp3"
+                  vol={0.3}
+                  playType="hover"
+                  pitch={currentHoverPitch}
+                  onPlay={handleHoverSoundPlay}
+                >
+                  {item}
+                </SoundHover>
+              </div>
             ))}
           </div>
         </div>
@@ -75,7 +117,7 @@ export default function Work() {
       <div className="h-px bg-white/25 my-5" />
 
       {/* Behance Section */}
-      <h2 className="text-3xl font-bold mb-2">
+      <h2 className="text-xl sm:text-2xl md:text-2xl lg:text-3xl font-bold mb-2">
         BEHANCE PROJECTS
       </h2>
 
