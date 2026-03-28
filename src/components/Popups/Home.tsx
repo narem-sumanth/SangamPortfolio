@@ -67,7 +67,7 @@ function HomePopUp({ handleClick }: HomePopUp) {
             fun stuff
           </p>
         </div>
-        <div className="bg-window-bg w-[90vw] md:w-130 h-[60vh] max-h-240 md:h-[60vh] md:max-h-120 lg:w-180 xl:w-200 lg:h-150 border-2 border-window-border rounded-xl shadow-flat overflow-hidden flex flex-col">
+        <div className="bg-window-bg w-[90vw] md:w-130 min-h-[50vh] h-[55vh] max-h-240 md:h-[60vh] md:max-h-120 lg:w-180 xl:w-200 lg:h-150 border-2 border-window-border rounded-xl shadow-flat overflow-hidden flex flex-col">
           <div
             className={`window-header text-white flex justify-between items-center bg-window-header px-6 py-2 rounded-t-[11px] border-b-2 border-window-border`}
           >
@@ -129,7 +129,7 @@ function HomePopUp({ handleClick }: HomePopUp) {
                 </div>
               </div>
               <div>
-                <p className='text-amber-500 dark:text-cyan-100 font-semibold text-lg sm:text-xl md:text-2xl lg:text-3xl'>
+                <p className='text-amber-500 dark:text-cyan-100 font-semibold text-lg sm:text-2xl md:text-3xl lg:text-4xl'>
                   {
                     HomePageData.find(item => item?.title === activeTab)?.description
                   }
