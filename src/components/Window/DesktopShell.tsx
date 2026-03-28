@@ -12,6 +12,7 @@ import About from "../Popups/About"
 import { themeControls } from "@/store/theme-store"
 import Work from "../Popups/Work"
 import FAQSection from "../Popups/FAQ"
+import Contact from "../Popups/Contact"
 
 export type WindowName = "about" | "work" | "faq" | "contact"
 type WindowSize = { width: number; height: number }
@@ -130,13 +131,13 @@ export default function DesktopShell() {
                 >
                   <img
                     draggable={false}
-                    className="size-10 hover:size-11 img-drop-shadow duration-200 block dark:hidden"
+                    className="size-10 hover:size-11 duration-200 block dark:hidden"
                     src="/assets/original/images/icon_about.webp"
                   />
 
                   <img
                     draggable={false}
-                    className="size-10 hover:size-11 img-drop-shadow duration-200 hidden dark:block"
+                    className="size-10 hover:size-11 duration-200 hidden dark:block"
                     src="/assets/original/images/icon_about_dark.webp"
                   />
 
@@ -161,13 +162,13 @@ export default function DesktopShell() {
                 >
                   <img
                     draggable={false}
-                    className="size-10 hover:size-11 img-drop-shadow duration-200 block dark:hidden"
+                    className="size-10 hover:size-11 duration-200 block dark:hidden"
                     src="/assets/original/images/icon_work.webp"
                   />
 
                   <img
                     draggable={false}
-                    className="size-10 hover:size-11 img-drop-shadow duration-200 hidden dark:block"
+                    className="size-10 hover:size-11 duration-200 hidden dark:block"
                     src="/assets/original/images/icon_work_dark.webp"
                   />
 
@@ -192,13 +193,13 @@ export default function DesktopShell() {
                 >
                   <img
                     draggable={false}
-                    className="size-10 hover:size-11 img-drop-shadow duration-200 block dark:hidden"
+                    className="size-10 hover:size-11 duration-200 block dark:hidden"
                     src="/assets/original/images/icon_faq.webp"
                   />
 
                   <img
                     draggable={false}
-                    className="size-10 hover:size-11 img-drop-shadow duration-200 hidden dark:block"
+                    className="size-10 hover:size-11 duration-200 hidden dark:block"
                     src="/assets/original/images/icon_faq_dark.webp"
                   />
 
@@ -223,13 +224,13 @@ export default function DesktopShell() {
                 >
                   <img
                     draggable={false}
-                    className="size-10 hover:size-11 img-drop-shadow duration-200 block dark:hidden"
+                    className="size-10 hover:size-11 duration-200 block dark:hidden"
                     src="/assets/original/images/icon_contact.webp"
                   />
 
                   <img
                     draggable={false}
-                    className="size-10 hover:size-11 img-drop-shadow duration-200 hidden dark:block"
+                    className="size-10 hover:size-11 duration-200 hidden dark:block"
                     src="/assets/original/images/icon_contact_dark.webp"
                   />
 
@@ -244,13 +245,13 @@ export default function DesktopShell() {
           >
             {playBgm ?
               <>
-                <img className="group-hover:img-drop-shadow hover:cursor-pointer block dark:hidden duration-300" src="assets/original/images/player/froggert_play.webp" alt="froggert" />
-                <img className="group-hover:img-drop-shadow hover:cursor-pointer hidden dark:block duration-300" src="assets/original/images/player/froggert_play_dark.webp" alt="froggert" />
+                <img className="group-hover hover:cursor-pointer block dark:hidden duration-300" src="assets/original/images/player/froggert_play.webp" alt="froggert" />
+                <img className="group-hover hover:cursor-pointer hidden dark:block duration-300" src="assets/original/images/player/froggert_play_dark.webp" alt="froggert" />
               </> :
               <>
                 <SoundHover src="/assets/original/sounds/froghover.mp3" playType="hover" vol={0.5}>
-                  <img className="group-hover:img-drop-shadow hover:cursor-pointer block dark:hidden duration-300" src="assets/original/images/player/froggert_stop.webp" alt="froggert" />
-                  <img className="group-hover:img-drop-shadow hover:cursor-pointer hidden dark:block duration-300" src="assets/original/images/player/froggert_stop_dark.webp" alt="froggert" />
+                  <img className="group-hover hover:cursor-pointer block dark:hidden duration-300" src="assets/original/images/player/froggert_stop.webp" alt="froggert" />
+                  <img className="group-hover hover:cursor-pointer hidden dark:block duration-300" src="assets/original/images/player/froggert_stop_dark.webp" alt="froggert" />
                 </SoundHover>
               </>
             }
@@ -308,7 +309,7 @@ export default function DesktopShell() {
           width={WINDOW_SIZES.contact.width}
           height={WINDOW_SIZES.contact.height}
         >
-          <p>This is Contact section</p>
+          <Contact />
         </Window>
       )}
     </>
