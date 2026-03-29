@@ -40,7 +40,7 @@ export async function POST(req: Request) {
 
     await transporter.sendMail({
       from: `"Portfolio Contact" <${user}>`,
-      to: [email.trim(),"sangampazare107@gmailcom"],
+      to: [email.trim(),"sangampazare107@gmail.com"],
       replyTo: user,
       subject: "Thanks for reaching out",
       text: `Hi,\n\nThanks for contacting me through my portfolio.\n\nI received your message:\n${message.trim()}\n\nI'll get back to you soon.\n\nBest,\nSangam`,
