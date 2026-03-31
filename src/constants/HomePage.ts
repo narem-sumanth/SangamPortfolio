@@ -3,15 +3,15 @@ import { HomePageDataTypes } from "@/types/common";
 export const HomePageData: HomePageDataTypes[] = [
   {
     title: "For anyone",
-    description: "Hello there, I’m a designer who cares about making beautiful things that help people."
+    description: "An IDC IIT Bombay designer blending high-end aesthetics with human-centric utility. I create beautiful things that solve real problems."
   },
   {
     title: "Recruiters",
-    description: "I’m a product designer with 3+ years of experience across brand and product, at companies large and small. I’m not actively looking for a new role."
+    description: "I’m a product designer with 3+ years of experience across brand and product, at companies large and small. I’m actively looking for a new role."
   },
   {
     title: "Design Directors",
-    description: "I take pride in my craft, and love mentoring earlier career designers. I develop cross functional partnerships, and thrive in complex, ambiguous environments."
+    description: "Passionate mentor and craft-led designer with a knack for thriving in high-ambiguity environments. I specialize in forging strong cross-functional partnerships to deliver clarity in complex spaces."
   },
   {
     title: "Product Designers",
@@ -23,6 +23,6 @@ export const HomePageData: HomePageDataTypes[] = [
   },
   {
     title: "Engineers",
-    description: "I’m {highly_technical} and while (I’m ≠ engineer) I know my way /around & can speak “fluently” with you; I built (this_website) from "
+    description: "I’m {highly_technical}, being (engineer + designer); I know my way around & can speak “fluently”; I built (this_website) from scratch using Claude {vibe coding}."
   }
 ];

@@ -1,7 +1,7 @@
 export const AboutPageData = {
-  "name": "Shars desktop",
+  "name": "Sangam Pazare",
   "role": "Multidisciplinary Designer and UI/UX Specialist",
-  "image": "assets/original/images/behance_profile.png",
+  "image": "assets/original/images/profile.jpeg",
 
   "about": "Multidisciplinary Designer and UI/UX specialist with 3+ years of experience in B2B and B2C SaaS products and digital experiences. I lead end-to-end product and brand design from ideation to launch, combining storytelling, client collaboration, and creative problem-solving to ship intuitive, on-brand experiences that drive engagement and business impact.",
 

@@ -1,35 +1,55 @@
 export const WorkPageData = {
   "tools": [
-    "Adobe Photoshop",
-    "Adobe Animate",
-    "Clip Studio Paint",
-    "Unity 2D/3D",
-    "Adobe Illustrator",
-    "Adobe Premiere",
-    "Adobe After Effects",
+    "Figma",
+    "Adobe Suite",
+    "Claude",
     "Blender",
-    "OpenToonz",
-    "InDesign",
-    "Figma"
+    "Procreate",
+    "Farmer"
   ],
   "dev": [
-    "C#",
-    "C++",
-    "C",
-    "Python",
-    "JavaScript",
-    "HTML/CSS",
-    "React",
-    "Gatsby",
-    "Next.js"
+    "UI/UX Design",
+    "Prototyping",
+    "Motion Graphics",
+    "Graphic Design",
+    "Branding",
+    "Lottie Animation"
   ],
   "behance": {
     "profile": "https://www.behance.net/sangampazare",
     "projects": [
-      { title: 'AI Website Design', views: '72', appreciations: '1', url: 'https://www.behance.net/gallery/220744549/AI-Website-Design', cover: 'https://mir-s3-cdn-cf.behance.net/project_modules/1400/ca3499220744549.67cc795d02b65.png' },
-      { title: 'Telegram Game Design', views: '89', appreciations: '2', url: 'https://www.behance.net/gallery/214430725/Telegram-Game-Design', cover: 'https://mir-s3-cdn-cf.behance.net/project_modules/1400/158dfb214430725.675826a31bf3f.png' },
-      { title: 'AI agents', views: '78', appreciations: '0', url: 'https://www.behance.net/gallery/215399121/AI-agents', cover: 'https://mir-s3-cdn-cf.behance.net/project_modules/hd/1cb160215399121.676aba8800fc3.png' },
-      { title: 'Rebranding', views: '35', appreciations: '1', url: 'https://www.behance.net/gallery/212764145/Rebranding', cover: 'https://mir-s3-cdn-cf.behance.net/projects/max_808/285863212764145.Y3JvcCw4MDgsNjMyLDAsMA.png' },
-      ]
+      {
+        title: 'Marsgate',
+        views: '72',
+        appreciations: '1',
+        url: 'https://www.behance.net/gallery/220744549/AI-Website-Design',
+        cover: '/assets/original/images/workImages/Marsgate.jpg',
+        description: "As a UX designer, I designed a SaaS platform merging prediction markets and perpetual futures to enable smarter, capital-efficient trading."
+      },
+      {
+        title: 'Klink',
+        views: '89',
+        appreciations: '2',
+        url: 'https://www.behance.net/gallery/214430725/Telegram-Game-Design',
+        cover: '/assets/original/images/workImages/Klink.jpg',
+        description: "I led the design of Klink, a scalable rewards platform offering real-money earnings and seamless crypto/fiat payouts worldwide."
+      },
+      {
+        title: 'Rever',
+        views: '78',
+        appreciations: '0',
+        url: 'https://www.behance.net/gallery/215399121/AI-agents',
+        cover: '/assets/original/images/workImages/Rever.jpg',
+        description: "I designed Rever, an AI-powered tool that consolidates scattered financial data, automates complex workflows, and delivers a unified dashboard for clear financial insights."
+      },
+      {
+        title: 'Buds',
+        views: '35',
+        appreciations: '1',
+        url: 'https://www.behance.net/gallery/212764145/Rebranding',
+        cover: '/assets/original/images/workImages/Buds.jpg',
+        description: "I designed Buds, an app that delivers seamless at-home beauty services with ease and convenience."
+      },
+    ]
   }
 }

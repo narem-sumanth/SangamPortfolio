@@ -251,10 +251,14 @@ export default function Window({
                 <button
                   onClick={handleMaximizeToggle}
                   onTouchStart={(e) => e.stopPropagation()}
-                  className="window-action-btn hover:opacity-60 flex items-center justify-center hover:bg-slate-100/10 rounded-sm p-1.5 size-8"
+                  className="window-action-btn hover:opacity-60 flex items-center justify-center hover:bg-slate-100/10 rounded-sm"
                   aria-label={isMaximized ? "Restore window" : "Maximize window"}
                 >
-                  <PictureInPicture2 size={20} className="" />
+                  {/* <PictureInPicture2 size={20} className="" /> */}
+                  <div className="relative p-1.5 size-8 flex items-center justify-center">
+                    <div className="size-3 border-2 rounded-xs absolute -mt-1"></div>
+                    <div className="size-3 border-2 rounded-xs absolute mt-1 -ml-1 bg-window-header"></div>
+                  </div>
                 </button>
               </SoundHover>
             )}

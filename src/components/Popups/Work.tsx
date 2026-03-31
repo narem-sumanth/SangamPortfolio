@@ -117,24 +117,24 @@ export default function Work() {
       <div className="h-px bg-white/25 my-5" />
 
       {/* Behance Section */}
-      <h2 className="text-xl sm:text-2xl md:text-2xl lg:text-3xl font-medium mb-2 font-roboto">
-        BEHANCE PROJECTS
+      <h2 className="text-xl sm:text-2xl md:text-2xl lg:text-3xl font-medium mb-2 font-roboto uppercase">
+        Selected works
       </h2>
 
       <p className="opacity-90 mb-3">
-        Imported from your Behance profile.
+        Stories from the SaaS products I helped shape in the real world
       </p>
 
       {/* Projects */}
       <div className="work-projects-grid">
         {behance.projects.map((project, key) => (
-          <Link key={key} href={project?.url} className="group">
+          <Link key={key} href={project?.url} className="group h-full">
             <article
               key={project.title}
               className="
                 border border-gray-200
                 rounded-[10px]
-                aspect-video
+                h-full flex flex-col
                 dark:bg-[rgba(17,19,24,0.55)]
                 dark:hover:bg-[rgba(37,48,70,0.85)]
                 hover:bg-gray-50/50
@@ -153,7 +153,9 @@ export default function Work() {
                 <h3 className="text-lg font-semibold">
                   {project.title}
                 </h3>
-                <p className="text-base">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora consequatur fugiat facilis beatae, dolorem aliquam.</p>
+                <p className="text-base">
+                  {project.description}
+                </p>
               </div>
             </article>
           </Link>
