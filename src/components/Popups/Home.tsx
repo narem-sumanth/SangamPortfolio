@@ -67,7 +67,7 @@ function HomePopUp({ handleClick }: HomePopUp) {
             fun stuff
           </p>
         </div>
-        <div className="bg-window-bg w-[90vw] md:w-130 min-h-[50vh] h-[55vh] max-h-240 md:h-[60vh] md:max-h-120 lg:w-180 xl:w-200 lg:h-150 border-2 border-window-border rounded-xl shadow-flat overflow-hidden flex flex-col">
+        <div className="bg-window-bg w-[90vw] md:w-130 min-h-[50vh] h-[65vh] max-h-240 md:h-[60vh] md:max-h-120 lg:w-180 xl:w-200 lg:h-150 border-2 border-window-border rounded-xl shadow-flat overflow-hidden flex flex-col">
           <div
             className={`window-header text-white flex justify-between items-center bg-window-header px-6 py-2 rounded-t-[11px] border-b-2 border-window-border`}
           >
@@ -79,11 +79,11 @@ function HomePopUp({ handleClick }: HomePopUp) {
                 hi! <span className='text-amber-500 dark:text-cyan-100 font-bold'>i&apos;m Sangam</span>
               </div>
               <div className='hidden lg:flex items-center justify-center'>
-                <div className='flex items-start flex-wrap lg:items-center justify-center gap-2 w-max'>
+                <div className='flex items-start flex-wrap lg:items-center justify-center w-max'>
                   {
                     HomePageData?.map((item, key) => {
                       return (
-                        <div className='h-10 group' key={key}>
+                        <div className='h-10 group mx-1 first:ml-0 last:mr-0' key={key}>
                           <SoundHover playType="click" src="/assets/original/sounds/click_general.mp3" vol={0.5}>
                             <button
                               key={key}
@@ -107,7 +107,7 @@ function HomePopUp({ handleClick }: HomePopUp) {
                   onMouseUp={handleMouseUp}
                   onMouseMove={handleMouseMove}
                 >
-                  <div className='flex items-center gap-2 w-max px-1'>
+                  <div className='flex items-center gap-2 w-max'>
                     {
                       HomePageData?.map((item, key) => {
                         return (
@@ -135,6 +135,15 @@ function HomePopUp({ handleClick }: HomePopUp) {
                   }
                 </p>
               </div>
+            </div>
+            <div className="px-6 absolute bottom-6 hidden md:block">
+              <SoundHover playType="click" src="/assets/original/sounds/click_general.mp3" vol={0.5}>
+                <button className="relative inline-block px-4 py-2 font-medium group">
+                  <span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform  translate-y-1 bg-slate-200 dark:bg-slate-500 group-hover:translate-x-0 group-hover:translate-y-0 rounded-full"></span>
+                  <span className="absolute inset-0 w-full h-full bg-amber-50 dark:bg-linear-to-br dark:from-wave-from dark:to-wave-from/50 dark:bg-black dark:text-white border border-amber-500 dark:border-white rounded-full"></span>
+                  <span className="relative group-hover:text-black dark:text-white dark:group-hover:text-white">Download Resume</span>
+                </button>
+              </SoundHover>
             </div>
           </div>
           <div className='flex items-center justify-center flex-wrap gap-5 mb-6 md:hidden'>
@@ -220,6 +229,20 @@ function HomePopUp({ handleClick }: HomePopUp) {
             </SoundHover>
           </div>
         </div>
+      </div>
+      <div className="fixed bottom-7 left-1/2 -translate-x-1/2 md:hidden z-50">
+        <SoundHover
+          playType="click"
+          src="/assets/original/sounds/click_general.mp3"
+          vol={0.5}
+          className="inline-flex justify-center"
+        >
+          <button className="relative inline-block px-4 py-2 font-medium group">
+            <span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform  translate-y-1 bg-slate-200 dark:bg-slate-500 group-hover:translate-x-0 group-hover:translate-y-0 rounded-full"></span>
+            <span className="absolute inset-0 w-full h-full bg-amber-50 dark:bg-linear-to-br dark:from-wave-from dark:to-wave-from/50 dark:bg-black dark:text-white border border-amber-500 dark:border-white rounded-full"></span>
+            <span className="relative group-hover:text-black dark:text-white dark:group-hover:text-white">Download&nbsp;Resume</span>
+          </button>
+        </SoundHover>
       </div>
     </>
   )

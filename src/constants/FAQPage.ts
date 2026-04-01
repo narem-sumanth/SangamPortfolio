@@ -5,19 +5,23 @@ export interface FAQItem {
 
 export const faq: FAQItem[] = [
   {
-    q: "what software do you use?",
-    a: "Illustration: Clip Studio Paint EX. Animation: Clip Studio Paint EX and Adobe Animate. 3D: Blender 2.83 LTS. You can check the rest of my tools in the Work window."
+    q: "How many years of experience do you have in SaaS?",
+    a: "Officially 3+ years of pure chaos and creativity in B2B Fintech, B2C Product and games, Crypto websites, and building AI products. I've survived deadlines, shipped features, and somehow still love this stuff. Consider me battle-tested."
   },
   {
-    q: "are your commissions open?",
-    a: "For commission work, contact me via my work email."
+    q: "What software do you use?",
+    a: "Figma is my design playground (I basically live there), and After Effects is where I make things dance with micro-animations. Basically: Figma for looks, After Effects for wow factor."
   },
   {
-    q: "what's your setup?",
-    a: "I use a custom PC with a drawing tablet and dual monitors."
+    q: "How did you make this website?",
+    a: "Designed it in Figma, made Claude turn it into a real website, then deployed it on Vercel. No traditional engineers were harmed in the making of this site."
   },
   {
-    q: "where do you get your sound effects?",
-    a: "From various royalty-free libraries and custom recordings."
+    q: "Are you open for work?",
+    a: "Yep. If you've got a cool project, let's make something awesome together. Just drop a message through the contact page."
+  },
+  {
+    q: "Coffee?",
+    a: "YES. Always. (Pro tip: Offer me coffee and I'll probably say yes to your project.)"
   }
 ];

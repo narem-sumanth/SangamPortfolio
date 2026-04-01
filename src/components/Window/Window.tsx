@@ -280,7 +280,7 @@ export default function Window({
         </div>
 
         {/* body */}
-        <div className="p-6 overflow-y-auto flex-1">
+        <div className="p-5 sm:p-6 overflow-y-auto flex-1">
           {children}
         </div>
 

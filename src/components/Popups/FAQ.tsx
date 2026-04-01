@@ -1,34 +1,8 @@
 "use client"
 
-// import { faq } from "@/constants/FAQPage";
+import { faq } from "@/constants/FAQPage";
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
-
-const faq = [
-  {
-    q: "What software do you use?",
-    a: (
-      <ul className="list-disc pl-5 space-y-1">
-        <li className="font-semibold">Illustration: <span className="text-amber-500 dark:text-cyan-200 underline">Clip Studio Paint EX</span></li>
-        <li className="font-semibold">Animation: <span className="text-amber-500 dark:text-cyan-200 underline">Clip Studio Paint EX</span>, <span className="font-normal">Adobe Animate</span></li>
-        <li><span className="font-semibold">3D:</span> blender 2.83 LTS</li>
-        <li>Feel free to check the rest of the tools i use in the Work window!</li>
-      </ul>
-    )
-  },
-  {
-    q: "Are your commissions open?",
-    a: "For commission work, contact me via my work email."
-  },
-  {
-    q: "What's your setup?",
-    a: "I use a custom PC with a drawing tablet and dual monitors."
-  },
-  {
-    q: "Where do you get your sound effects?",
-    a: "From various royalty-free libraries and custom recordings."
-  }
-];
 
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);

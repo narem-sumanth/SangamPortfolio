@@ -17,11 +17,17 @@ import Contact from "../Popups/Contact"
 export type WindowName = "about" | "work" | "faq" | "contact"
 type WindowSize = { width: number; height: number }
 
-const WINDOW_SIZES: Record<WindowName, WindowSize> = {
-  about: { width: 800, height: 500 },
-  work: { width: 800, height: 500 },
-  faq: { width: 800, height: 500 },
-  contact: { width: 800, height: 500 },
+const LG_BREAKPOINT = 1024
+
+const getWindowSizes = (viewportWidth: number): Record<WindowName, WindowSize> => {
+  const width = viewportWidth >= LG_BREAKPOINT ? 900 : 800
+
+  return {
+    about: { width, height: 500 },
+    work: { width, height: 500 },
+    faq: { width, height: 500 },
+    contact: { width, height: 500 },
+  }
 }
 
 export default function DesktopShell() {
@@ -31,6 +37,9 @@ export default function DesktopShell() {
   const { volume } = themeControls();
 
   const [openWindows, setOpenWindows] = useState<WindowName[]>([]);
+  const [windowSizes, setWindowSizes] = useState<Record<WindowName, WindowSize>>(
+    typeof window !== "undefined" ? getWindowSizes(window.innerWidth) : getWindowSizes(LG_BREAKPOINT)
+  )
 
   const [playBgm, setPlayBgm] = useState<boolean>(false);
 
@@ -54,6 +63,17 @@ export default function DesktopShell() {
       audioRef.current.currentTime = 0;
     }
   }, [playBgm]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowSizes(getWindowSizes(window.innerWidth))
+    }
+
+    window.addEventListener("resize", handleResize)
+    handleResize()
+
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
 
   const handleClick = (name: WindowName) => {
     if (Date.now() < suppressClickUntil.current) return;
@@ -267,8 +287,8 @@ export default function DesktopShell() {
           onClose={() => closeWindow("about")}
           onActivate={() => focusWindow("about")}
           child={getWindowIndex("about")}
-          width={WINDOW_SIZES.about.width}
-          height={WINDOW_SIZES.about.height}
+          width={windowSizes.about.width}
+          height={windowSizes.about.height}
         >
           <About />
         </Window>
@@ -280,8 +300,8 @@ export default function DesktopShell() {
           onClose={() => closeWindow("work")}
           onActivate={() => focusWindow("work")}
           child={getWindowIndex("work")}
-          width={WINDOW_SIZES.work.width}
-          height={WINDOW_SIZES.work.height}
+          width={windowSizes.work.width}
+          height={windowSizes.work.height}
         >
           <Work />
         </Window>
@@ -293,8 +313,8 @@ export default function DesktopShell() {
           onClose={() => closeWindow("faq")}
           onActivate={() => focusWindow("faq")}
           child={getWindowIndex("faq")}
-          width={WINDOW_SIZES.faq.width}
-          height={WINDOW_SIZES.faq.height}
+          width={windowSizes.faq.width}
+          height={windowSizes.faq.height}
         >
           <FAQSection />
         </Window>
@@ -306,8 +326,8 @@ export default function DesktopShell() {
           onClose={() => closeWindow("contact")}
           onActivate={() => focusWindow("contact")}
           child={getWindowIndex("contact")}
-          width={WINDOW_SIZES.contact.width}
-          height={WINDOW_SIZES.contact.height}
+          width={windowSizes.contact.width}
+          height={windowSizes.contact.height}
         >
           <Contact />
         </Window>

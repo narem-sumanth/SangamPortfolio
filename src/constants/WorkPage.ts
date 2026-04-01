@@ -5,7 +5,10 @@ export const WorkPageData = {
     "Claude",
     "Blender",
     "Procreate",
-    "Farmer"
+    "Farmer",
+    "After Effects",
+    "Spline",
+    "Rive"
   ],
   "dev": [
     "UI/UX Design",

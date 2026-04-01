@@ -3,7 +3,7 @@ import { HomePageDataTypes } from "@/types/common";
 export const HomePageData: HomePageDataTypes[] = [
   {
     title: "For anyone",
-    description: "An IDC IIT Bombay designer blending high-end aesthetics with human-centric utility. I create beautiful things that solve real problems."
+    description: "IDC IIT Bombay alumnus. I design beautiful, high-end experiences that are deeply human-centric and genuinely solve real problems."
   },
   {
     title: "Recruiters",
