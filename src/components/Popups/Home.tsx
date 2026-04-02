@@ -67,7 +67,7 @@ function HomePopUp({ handleClick }: HomePopUp) {
             fun stuff
           </p>
         </div>
-        <div className="bg-window-bg w-[90vw] md:w-130 min-h-[50vh] h-[65vh] max-h-240 md:h-[60vh] md:max-h-120 lg:w-180 xl:w-200 lg:h-150 border-2 border-window-border rounded-xl shadow-flat overflow-hidden flex flex-col">
+        <div className="bg-window-bg w-[90vw] md:w-130 min-h-[50vh] h-[55vh] max-h-240 md:h-[60vh] md:max-h-150 lg:max-h-140 lg:w-180 xl:w-200 lg:h-150 border-2 border-window-border rounded-xl shadow-flat overflow-hidden flex flex-col">
           <div
             className={`window-header text-white flex justify-between items-center bg-window-header px-6 py-2 rounded-t-[11px] border-b-2 border-window-border`}
           >
@@ -230,7 +230,7 @@ function HomePopUp({ handleClick }: HomePopUp) {
           </div>
         </div>
       </div>
-      <div className="fixed bottom-7 left-1/2 -translate-x-1/2 md:hidden z-50">
+      <div className="fixed z-5 bottom-7 left-1/2 -translate-x-1/2 md:hidden">
         <SoundHover
           playType="click"
           src="/assets/original/sounds/click_general.mp3"

@@ -23,10 +23,10 @@ const getWindowSizes = (viewportWidth: number): Record<WindowName, WindowSize> =
   const width = viewportWidth >= LG_BREAKPOINT ? 900 : 800
 
   return {
-    about: { width, height: 500 },
-    work: { width, height: 500 },
-    faq: { width, height: 500 },
-    contact: { width, height: 500 },
+    about: { width, height: 550 },
+    work: { width, height: 550 },
+    faq: { width, height: 550 },
+    contact: { width, height: 550 },
   }
 }
 
