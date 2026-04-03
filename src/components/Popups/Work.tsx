@@ -30,7 +30,7 @@ export default function Work() {
   }, []);
 
   return (
-    <div className="pb-5 work-popup-content">
+    <div className="work-popup-content">
       {/* Info Box */}
       {/* <div className="bg-[#4b88bf] rounded p-4 mb-6">
         <b>Accepting work offers via email.</b>
@@ -162,16 +162,22 @@ export default function Work() {
         ))}
       </div>
 
-      <div className="mt-3">
+      <div className="mt-8">
         See all projects on&nbsp;
-        <a
-          href={behance.profile}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="dark:text-cyan-200 text-blue-600 underline"
-        >
-          Behance
-        </a>
+        <Link href={behance.profile}>
+          <SoundHover
+            playType="click"
+            src="/assets/original/sounds/click_general.mp3"
+            vol={0.5}
+            className="inline-flex justify-center"
+          >
+            <button className="relative inline-block px-4 py-1 font-medium group">
+              <span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform  translate-y-1 bg-slate-200 dark:bg-slate-500 group-hover:translate-x-0 group-hover:translate-y-0 rounded-full"></span>
+              <span className="absolute inset-0 w-full h-full bg-amber-50 dark:bg-linear-to-br dark:from-wave-from dark:to-wave-from/50 dark:bg-black dark:text-white border border-amber-500 dark:border-white rounded-full"></span>
+              <span className="relative group-hover:text-black dark:text-white dark:group-hover:text-white">Behance</span>
+            </button>
+          </SoundHover>
+        </Link>
       </div>
     </div>
   );

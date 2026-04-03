@@ -34,25 +34,25 @@ export const AboutPageData = {
       "company": "Rever",
       "duration": "April 25 - Present",
       "role": "UX Designer",
-      "description": "Joined as the first UX designer at a B2B SaaS company, partnering closely with founders to define and shape the entire web platform from the ground up."
+      "description": "The OG design hire. Built the B2B fintech product from scratch, aka controlled chaos, but make it design."
     },
     {
       "company": "ETV Bharat",
       "duration": "Feb 25 - April 25",
-      "role": "UI/UX Designer - Contract",
-      "description": "I worked on designing a game, crafting its core mechanics and UI, ensuring an engaging player interface."
+      "role": "UI/UX Designer",
+      "description": "Designed a game from mechanics to UI. Basically made sure it was fun and made sense."
     },
     {
       "company": "By the Gram",
       "duration": "Jan 24 - Feb 25",
       "role": "Creative Designer",
-      "description": "Led end-to-end branding, including campaign and UI, research, and strategy for brands such as Nykaa and Netflix."
+      "description": "Did everything from branding to campaigns to UI for folks like Nykaa and Netflix. Yes, wore many hats."
     },
     {
       "company": "Blocsys",
       "duration": "Nov 21 - Dec 22",
-      "role": "UI/UX Designer - 1.1 Year",
-      "description": "Designed engaging UI/UX for a variety of B2C projects, including game interfaces for Telegram-based games."
+      "role": "UI/UX Designer",
+      "description": "Worked on B2C products and Telegram games. If it had a screen, I probably designed it."
     }
   ]
 }

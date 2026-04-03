@@ -9,7 +9,7 @@ const About = () => {
 
       {/* Header */}
       <div className="about-header">
-        <div className="about-header-main border border-wave-to rounded-3xl flex flex-col items-center justify-center bg-amber-50/50 dark:bg-linear-to-br dark:from-[#0D1F3B] dark:to-[#2355A1] dark:bg-black dark:text-white">
+        <div className="about-header-main border border-wave-to rounded-2xl flex flex-col items-center justify-center bg-amber-50/50 dark:bg-linear-to-br dark:from-[#0D1F3B] dark:to-[#2355A1] dark:bg-black dark:text-white">
           {/* Image */}
           <div className="about-header-image p-3 aspect-square size-52">
             <img
@@ -34,7 +34,7 @@ const About = () => {
             </div>
           </div>
         </div>
-        <div className="about-header-side border border-wave-to rounded-3xl bg-amber-50/50 dark:bg-linear-to-br dark:from-[#0D1F3B] dark:to-[#2355A1] dark:bg-black dark:text-white">
+        <div className="about-header-side border border-wave-to rounded-2xl bg-amber-50/50 dark:bg-linear-to-br dark:from-[#0D1F3B] dark:to-[#2355A1] dark:bg-black dark:text-white">
           <div className="border-b border-wave-to p-3 pt-2 w-full">
             <p className="text-xl text-amber-500 dark:text-cyan-100 font-medium text-center about-header-copy">
               {AboutPageData.academicWeapon.title}
@@ -50,7 +50,7 @@ const About = () => {
       <div className="about-header mt-6">
         <div className="gap-6 grid">
           {/* Hobbies */}
-          <div className="border border-wave-to rounded-3xl bg-amber-50/50 dark:bg-linear-to-br dark:from-[#0D1F3B] dark:to-[#2355A1] dark:bg-black dark:text-white">
+          <div className="border border-wave-to rounded-2xl bg-amber-50/50 dark:bg-linear-to-br dark:from-[#0D1F3B] dark:to-[#2355A1] dark:bg-black dark:text-white">
             <div className="border-b border-wave-to p-3 pt-2 w-full">
               <p className="text-xl text-amber-500 dark:text-cyan-100 font-medium text-center about-header-copy">
                 {AboutPageData.hobbies.title}
@@ -63,7 +63,7 @@ const About = () => {
             </div>
           </div>
           {/* Genuine Review */}
-          <div className="border border-wave-to rounded-3xl bg-amber-50/50 dark:bg-linear-to-br dark:from-[#0D1F3B] dark:to-[#2355A1] dark:bg-black dark:text-white">
+          <div className="border border-wave-to rounded-2xl bg-amber-50/50 dark:bg-linear-to-br dark:from-[#0D1F3B] dark:to-[#2355A1] dark:bg-black dark:text-white">
             <div className="border-b border-wave-to p-3 pt-2 w-full">
               <p className="text-xl text-amber-500 dark:text-cyan-100 font-medium text-center about-header-copy">
                 {AboutPageData.review.title}
@@ -74,14 +74,14 @@ const About = () => {
                 {AboutPageData.review.quote}
               </p>
             </div>
-            <div className="text-[12px] sm:text-sm opacity-90 p-3 pt-2">
+            <div className="text-[12px] sm:text-sm opacity-90 p-3 pt-2 text-right">
               <p>
                 - {AboutPageData.review.author}
               </p>
             </div>
           </div>
         </div>
-        <div className="border border-wave-to rounded-3xl bg-amber-50/50 dark:bg-linear-to-br dark:from-[#0D1F3B] dark:to-[#2355A1] dark:bg-black dark:text-white">
+        <div className="border border-wave-to rounded-2xl bg-amber-50/50 dark:bg-linear-to-br dark:from-[#0D1F3B] dark:to-[#2355A1] dark:bg-black dark:text-white">
           <div className="border-b border-wave-to p-3 pt-2 w-full">
             <p className="text-xl text-amber-500 dark:text-cyan-100 font-medium text-center about-header-copy">
               Work Experience:
