@@ -22,13 +22,13 @@ const About = () => {
           {/* Name + Role */}
           <div className="about-header-content flex flex-col items-center justify-center gap-2 w-full">
             <div className="border-b border-wave-to p-3 pt-2 w-full">
-              <h2 className="text-2xl text-amber-500 dark:text-cyan-100 font-bold text-center">
+              <h2 className="text-2xl text-amber-500 dark:text-cyan-100 font-bold text-left">
                 {AboutPageData.introTitle}
               </h2>
             </div>
 
             <div className="text-sm sm:text-base opacity-90 p-3 pt-2">
-              <p>
+              <p className="text-left">
                 {AboutPageData.intro}
               </p>
             </div>
@@ -36,7 +36,7 @@ const About = () => {
         </div>
         <div className="about-header-side border border-wave-to rounded-2xl bg-amber-50/50 dark:bg-linear-to-br dark:from-[#0D1F3B] dark:to-[#2355A1] dark:bg-black dark:text-white">
           <div className="border-b border-wave-to p-3 pt-2 w-full">
-            <p className="text-xl text-amber-500 dark:text-cyan-100 font-medium text-center about-header-copy">
+            <p className="text-xl text-amber-500 dark:text-cyan-100 font-medium about-header-copy">
               {AboutPageData.academicWeapon.title}
             </p>
           </div>
@@ -52,7 +52,7 @@ const About = () => {
           {/* Hobbies */}
           <div className="border border-wave-to rounded-2xl bg-amber-50/50 dark:bg-linear-to-br dark:from-[#0D1F3B] dark:to-[#2355A1] dark:bg-black dark:text-white">
             <div className="border-b border-wave-to p-3 pt-2 w-full">
-              <p className="text-xl text-amber-500 dark:text-cyan-100 font-medium text-center about-header-copy">
+              <p className="text-xl text-amber-500 dark:text-cyan-100 font-medium about-header-copy">
                 {AboutPageData.hobbies.title}
               </p>
             </div>
@@ -65,7 +65,7 @@ const About = () => {
           {/* Genuine Review */}
           <div className="border border-wave-to rounded-2xl bg-amber-50/50 dark:bg-linear-to-br dark:from-[#0D1F3B] dark:to-[#2355A1] dark:bg-black dark:text-white">
             <div className="border-b border-wave-to p-3 pt-2 w-full">
-              <p className="text-xl text-amber-500 dark:text-cyan-100 font-medium text-center about-header-copy">
+              <p className="text-xl text-amber-500 dark:text-cyan-100 font-medium about-header-copy">
                 {AboutPageData.review.title}
               </p>
             </div>
@@ -83,7 +83,7 @@ const About = () => {
         </div>
         <div className="border border-wave-to rounded-2xl bg-amber-50/50 dark:bg-linear-to-br dark:from-[#0D1F3B] dark:to-[#2355A1] dark:bg-black dark:text-white">
           <div className="border-b border-wave-to p-3 pt-2 w-full">
-            <p className="text-xl text-amber-500 dark:text-cyan-100 font-medium text-center about-header-copy">
+            <p className="text-xl text-amber-500 dark:text-cyan-100 font-medium about-header-copy">
               Work Experience:
             </p>
           </div>

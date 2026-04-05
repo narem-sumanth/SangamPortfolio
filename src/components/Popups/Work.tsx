@@ -162,9 +162,9 @@ export default function Work() {
         ))}
       </div>
 
-      <div className="mt-8">
+      <div className="mt-8 flex sm:items-center w-full sm:justify-center sm:flex-col gap-2">
         See all projects on&nbsp;
-        <Link href={behance.profile} target="_blank">
+        <Link href={behance.profile} target="_blank" className="">
           <SoundHover
             playType="click"
             src="/assets/original/sounds/click_general.mp3"
