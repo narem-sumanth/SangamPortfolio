@@ -139,7 +139,7 @@ function HomePopUp({ handleClick }: HomePopUp) {
             </div>
             <div className="px-6 absolute bottom-6 hidden md:block">
               <SoundHover playType="click" src="/assets/original/sounds/click_general.mp3" vol={0.5}>
-                <Link href="assets/original/Sangam-Resume.pdf" className="relative inline-block px-4 py-2 font-medium group">
+                <Link href="assets/original/Sangam-Resume.pdf" target="_blank" className="relative inline-block px-4 py-2 font-medium group">
                   <span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform  translate-y-1 bg-slate-200 dark:bg-slate-500 group-hover:translate-x-0 group-hover:translate-y-0 rounded-full"></span>
                   <span className="absolute inset-0 w-full h-full bg-amber-50 dark:bg-linear-to-br dark:from-wave-from dark:to-wave-from/50 dark:bg-black dark:text-white border border-amber-500 dark:border-white rounded-full"></span>
                   <span className="relative group-hover:text-black dark:text-white dark:group-hover:text-white">Download Resume</span>
@@ -238,7 +238,7 @@ function HomePopUp({ handleClick }: HomePopUp) {
           vol={0.5}
           className="inline-flex justify-center"
         >
-          <Link href="assets/original/Sangam-Resume.pdf" className="relative inline-block px-4 py-2 font-medium group">
+          <Link href="assets/original/Sangam-Resume.pdf" target="_blank" className="relative inline-block px-4 py-2 font-medium group">
             <span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform  translate-y-1 bg-slate-200 dark:bg-slate-500 group-hover:translate-x-0 group-hover:translate-y-0 rounded-full"></span>
             <span className="absolute inset-0 w-full h-full bg-amber-50 dark:bg-linear-to-br dark:from-wave-from dark:to-wave-from/50 dark:bg-black dark:text-white border border-amber-500 dark:border-white rounded-full"></span>
             <span className="relative group-hover:text-black dark:text-white dark:group-hover:text-white">Download&nbsp;Resume</span>

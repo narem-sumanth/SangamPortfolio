@@ -13,7 +13,7 @@ interface ThemeControlsState {
 export const themeControls = create<ThemeControlsState>()(
   persist(
     (set) => ({
-      theme: "light",
+      theme: "dark",
       volume: true,
 
       toggleTheme: () =>
