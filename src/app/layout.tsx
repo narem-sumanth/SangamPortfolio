@@ -12,14 +12,34 @@ const robot = Roboto({
   variable: "--font-roboto",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "900"],
-})
+});
+
+const siteUrl = "https://sangampazare.online";
+const siteName = "Sangam Pazare Portfolio";
+
+const webSiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: siteName,
+  alternateName: "Sangam Pazare",
+  url: siteUrl,
+};
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://sangampazare.online"),
+  metadataBase: new URL(siteUrl),
+  applicationName: siteName,
+  alternates: {
+    canonical: "/",
+  },
+  manifest: "/site.webmanifest",
   icons: {
-    icon: "/favicon.png",
-    shortcut: "/favicon.png",
-    apple: "/favicon.png",
+    icon: [
+      { url: "/favicon-48.png", sizes: "48x48", type: "image/png" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    shortcut: [{ url: "/favicon-48.png", sizes: "48x48", type: "image/png" }],
+    apple: [{ url: "/icon-192.png", sizes: "192x192", type: "image/png" }],
   },
   title: "Sangam Pazare - Graphic & UI/UX Designer",
   description:
@@ -41,16 +61,17 @@ export const metadata: Metadata = {
   creator: "Sangam Pazare",
   openGraph: {
     type: "website",
+    url: "/",
     title: "Sangam Pazare - Graphic & UI/UX Designer",
     description:
       "IDC IIT Bombay alumnus. 3+ years designing end-to-end product experiences across fintech, SaaS, and consumer apps. High craft, systems thinking, real outcomes.",
-    siteName: "Sangam Pazare Portfolio",
+    siteName,
     images: [
       {
         url: "/assets/original/images/profile.jpeg",
         width: 1200,
         height: 630,
-        alt: "Sangam Pazare — Graphic Designer",
+        alt: "Sangam Pazare - Graphic Designer",
       },
     ],
   },
@@ -60,6 +81,7 @@ export const metadata: Metadata = {
     description:
       "Multidisciplinary designer from IIT Bombay. Currently designing at Rever. Worked on fintech, SaaS, branding, and 20+ live products.",
     images: ["/assets/original/images/profile.jpeg"],
+    creator: "@sangampazare",
   },
   robots: {
     index: true,
@@ -79,6 +101,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteJsonLd) }}
+        />
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(){try{var s=localStorage.getItem('theme-controls-storage');var theme='dark';if(s){var t=JSON.parse(s);if(t&&t.state&&t.state.theme){theme=t.state.theme;}}if(theme==='dark'){document.documentElement.classList.add('dark');}}catch(e){document.documentElement.classList.add('dark');}})();`,
