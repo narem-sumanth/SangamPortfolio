@@ -16,6 +16,11 @@ const robot = Roboto({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://sangampazare.online"),
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
   title: "Sangam Pazare - Graphic & UI/UX Designer",
   description:
     "Portfolio of Sangam Pazare, a multidisciplinary designer from IDC IIT Bombay with 3+ years across B2B SaaS, fintech, branding, and mobile. Currently at Rever.",
