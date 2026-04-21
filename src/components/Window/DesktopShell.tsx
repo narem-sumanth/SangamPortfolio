@@ -43,6 +43,7 @@ export default function DesktopShell() {
   )
 
   const [playBgm, setPlayBgm] = useState<boolean>(false);
+  const [showFrogTooltip, setShowFrogTooltip] = useState<boolean>(false);
 
   const dragDistance = useRef(0)
   const suppressClickUntil = useRef(0)
@@ -64,6 +65,15 @@ export default function DesktopShell() {
       audioRef.current.currentTime = 0;
     }
   }, [playBgm]);
+
+  useEffect(() => {
+    const showTimer = setTimeout(() => setShowFrogTooltip(true), 1500)
+    const hideTimer = setTimeout(() => setShowFrogTooltip(false), 5500)
+    return () => {
+      clearTimeout(showTimer)
+      clearTimeout(hideTimer)
+    }
+  }, [])
 
   useEffect(() => {
     const handleResize = () => {
@@ -266,7 +276,7 @@ export default function DesktopShell() {
             onClick={() => handlePlayBgm()}
           >
             {!playBgm && (
-              <div className="absolute bottom-full right-0 mb-3 opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 pointer-events-none transition-[opacity,transform] duration-200 ease-out">
+              <div className={`absolute bottom-full right-0 mb-3 pointer-events-none transition-[opacity,transform] duration-200 ease-out group-hover:opacity-100 group-hover:translate-y-0 ${showFrogTooltip ? "opacity-100 translate-y-0" : "opacity-0 translate-y-1"}`}>
                 <div className="relative bg-window-bg border-2 border-window-border rounded-xl shadow-flat px-4 py-3 text-sm whitespace-nowrap">
                   Click on frog to vibe...
                   <div className="absolute -bottom-2.25 right-4 size-3.5 bg-window-bg border-r-2 border-b-2 border-window-border rotate-45" />
@@ -279,7 +289,7 @@ export default function DesktopShell() {
                 <img className="group-hover hover:cursor-pointer hidden dark:block duration-300" src="assets/original/images/player/froggert_play_dark.webp" alt="froggert" />
               </> :
               <>
-                <SoundHover src="/assets/original/sounds/froghover.mp3" playType="hover" vol={0.5}>
+                <SoundHover src="/assets/original/sounds/froghover.mp3" playType="hover" vol={0.7}>
                   <img className="group-hover hover:cursor-pointer block dark:hidden duration-300" src="assets/original/images/player/froggert_stop.webp" alt="froggert" />
                   <img className="group-hover hover:cursor-pointer hidden dark:block duration-300" src="assets/original/images/player/froggert_stop_dark.webp" alt="froggert" />
                 </SoundHover>
